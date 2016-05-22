@@ -23,10 +23,12 @@
     </ul>
   </div>
 </nav>
-<div class="jumbo u-max-full-width">
+<div class="jumbo">
 
 </div>
+  <!-- <%= yield %> -->
 <div class="container-fluid">
+  <%= render 'static_pages/about' %>
   <div class="row">
     <div class="col col-md-3">
       <%= image_tag("bike1.jpg", class: "img-responsive") %>
@@ -41,12 +43,8 @@
       <%= image_tag("bike4.jpg", class: "img-responsive") %>
     </div>
   </div> <!-- end row -->
-  
-  <%= yield %>
-
-  <footer>
-    &copy; 2015 Bike Berlin
-  </footer>
+  <%= render 'static_pages/contact' %>
 </div> <!-- end content footer -->
+  <%= render 'static_pages/footer' %>
 </body>
 </html>
