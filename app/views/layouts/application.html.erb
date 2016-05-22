@@ -7,8 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
+  <div class="container">
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+</nav>
+<div class="jumbo u-max-full-width">
 
-<%= yield %>
+</div>
+<div class="container">
+  <%= yield %>
 
+  <footer>
+    &copy; 2015 Bike Berlin
+  </footer>
+
+</div>
 </body>
 </html>
