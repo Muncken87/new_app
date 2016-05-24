@@ -7,28 +7,67 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<nav>
+<!-- Start Navigation -->
+<nav class="navbar navbar-default">
   <div class="container">
-    <ul>
-      <li>Home</li>
-      <li>About</li>
-      <li>Contact</li>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="">Home</a>
+      </li>
+      <li>
+        <a href="">About</a>
+      </li>
+      <li>
+        <a href="">Contact</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="">Login</a>
+      </li>
+      <li>
+        <a href="">Sign up</a>
+      </li>
     </ul>
   </div>
 </nav>
+<!-- End Navigation -->
+<!-- Start Jumbo -->
 <div class="jumbo">
 
 </div>
+<!-- End Jumbo -->
   <!-- <%= yield %> -->
 <div class="container-fluid">
   <%= render 'static_pages/about' %>
+  <div class="overview">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="">Model</a>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Price <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">One more separated link</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="">Sort</a>
+      </li>
+    </ul>
+  </div>
   <div class="row">
     <div class="col col-md-3">
       <%= image_tag("bike1.jpg", class: "img-responsive") %>

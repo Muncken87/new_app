@@ -5,4 +5,26 @@
   background-repeat: no-repeat
   background-size: cover
   margin-bottom: 2em
-  background-position: 0% 100%
+  background-position: 0% 165%
+  background-attachment: fixed
+
+.overview
+  border-top: 1px solid #eee
+  border-bottom: 1px solid #eee
+  padding: 0.5em 0em
+  margin: 3em auto 3em auto
+  max-width: 700px
+
+  &::after,&::before
+    clear: both
+    display: table
+    content: ""
+
+  .nav
+    li
+      a
+        color: #777
+
+        &:hover
+          background-color: transparent
+          color: #333
