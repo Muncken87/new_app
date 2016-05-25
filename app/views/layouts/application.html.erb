@@ -14,8 +14,18 @@
 </head>
 <body>
 <!-- Start Navigation -->
-<nav class="navbar navbar-default">
+ <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Bike Berlin</a>
+    </div>
+    <div class="navbar-collapse collapse" aria-expanded="false">
     <ul class="nav navbar-nav">
       <li>
         <a href="">Home</a>
@@ -27,27 +37,28 @@
         <a href="">Contact</a>
       </li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li>
-        <a href="">Login</a>
-      </li>
-      <li>
-        <a href="">Sign up</a>
-      </li>
-    </ul>
+     <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="">Login</a>
+        </li>
+        <li>
+          <a href="">Sign up</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 <!-- End Navigation -->
 <!-- Start Jumbo -->
 <div class="jumbo">
-
 </div>
+
 <!-- End Jumbo -->
   <!-- <%= yield %> -->
 <div class="container-fluid">
   <%= render 'static_pages/about' %>
   <div class="overview">
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav overview-list">
       <li>
         <a href="">Model</a>
       </li>
@@ -63,8 +74,10 @@
           <li><a href="#">One more separated link</a></li>
         </ul>
       </li>
-      <li>
-        <a href="">Sort</a>
+      <li class="sort">
+        <a href="">
+          Sort
+          <span class="glyphicon glyphicon-th"></span></a>
       </li>
     </ul>
   </div>
