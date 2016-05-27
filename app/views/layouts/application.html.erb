@@ -23,7 +23,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Bike Berlin</a>
+      <a class="navbar-brand" href="#">Spintail</a>
     </div>
     <div class="navbar-collapse collapse" aria-expanded="false">
     <ul class="nav navbar-nav">
@@ -51,48 +51,61 @@
 <!-- End Navigation -->
 <!-- Start Jumbo -->
 <div class="jumbo">
+  <div class="jumbo-price-block">
+    <h2 class="info-text">Sky Planter</h2>
+    <span class="info-price"> $25.00</span>
+  </div>
 </div>
 
 <!-- End Jumbo -->
-  <!-- <%= yield %> -->
-<div class="container-fluid">
+ <%= yield %>
+
+<div class="container">
   <%= render 'static_pages/about' %>
+  <h2> Products </h2>
   <div class="overview">
+
     <ul class="nav navbar-nav overview-list">
       <li>
-        <a href="">Model</a>
+        <a href="">All</a>
       </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Price <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">One more separated link</a></li>
-        </ul>
+      <li>
+        <a href="">Office</a>
       </li>
-      <li class="sort">
-        <a href="">
-          Sort
-          <span class="glyphicon glyphicon-th"></span></a>
+      <li>
+        <a href="">Books & Magazines</a>
+      </li>
+      <li>
+        <a href="">Home</a>
+      </li>
+      <li>
+        <a href="">Children</a>
+      </li>
+      <li>
+        <a href="">Outdoor</a>
+      </li>
+      <li>
+        <a href="">Search</a>
       </li>
     </ul>
   </div>
+  <!-- end separator-->
   <div class="row">
-    <div class="col col-md-3">
-      <%= image_tag("bike1.jpg", class: "img-responsive") %>
+    <div class="col col-md-4">
+      <div class="product-overlay"></div>
+      <%= image_tag("item1.jpg", class: "img-responsive") %>
     </div>
-    <div class="col col-md-3">
-      <%= image_tag("bike2.jpg", class: "img-responsive") %>
+    <div class="col col-md-4">
+      <div class="product-overlay"></div>
+      <%= image_tag("item2.jpg", class: "img-responsive") %>
     </div>
-    <div class="col col-md-3">
-      <%= image_tag("bike3.jpg", class: "img-responsive") %>
+    <div class="col col-md-4">
+      <div class="product-overlay"></div>
+      <%= image_tag("item3.jpg", class: "img-responsive") %>
     </div>
-    <div class="col col-md-3">
-      <%= image_tag("bike4.jpg", class: "img-responsive") %>
+    <div class="col col-md-4">
+      <div class="product-overlay"></div>
+      <%= image_tag("item4.jpg", class: "img-responsive") %>
     </div>
   </div> <!-- end row -->
   <%= render 'static_pages/contact' %>

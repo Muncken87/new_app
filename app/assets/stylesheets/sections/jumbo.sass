@@ -1,43 +1,49 @@
 .jumbo
-  background-image: url(image-path('jumbo-compressor.jpg'))
-  height: 75vh
+  background-image: url(image-path('jumbo.jpg'))
+  height: calc(100vh - 20px)
   width: 100%
   background-repeat: no-repeat
   background-size: cover
   margin-bottom: 2em
-  background-position: 0% 165%
+  background-position: center center
   background-attachment: fixed
+  position: relative
+  overflow: hidden
+  
+  .jumbo-price-block
+    position: absolute
+    top: 50%
+    left: 70%
+    transform: translate(-50%, -70%)
+
+    .info-text
+      margin-bottom: 0.25em
+
+    .info-price
+      font-size: 1.25em
 
 .overview
-  border-top: 1px solid #eee
-  border-bottom: 1px solid #eee
   padding: 0.5em 0em
-  margin: 3em auto 3em auto
-  max-width: 700px
+  margin: 0em auto 3em auto
+  max-width: 100%
 
   .overview-list
     width: 100%
     li
       float: left
+      margin-left: 1.5em
+      font-size: 1.25em
+      color: #8a8a8a
 
-    .sort
-      float: right
-
-      .glyphicon
-        margin-left: 1em
-        font-size: 1em
-
+      &:first-of-type
+        margin-left: 0
+      a
+        &:first-of-type
+          padding-left: 0
+        &:last-of-type
+          padding-right: 0
 
   &::after,&::before
     clear: both
     display: table
     content: ""
-
-  .nav
-    li
-      a
-        color: #777
-
-        &:hover
-          background-color: transparent
-          color: #333
