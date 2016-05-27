@@ -2,10 +2,6 @@ body {
 
 }
 
-p, ol, ul, td {
-  font-size: 13px;
-  line-height: 18px;
-}
 
 pre {
   background-color: #eee;
@@ -15,15 +11,6 @@ pre {
 
 a {
   color: #000;
-
-  &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
 }
 
 div {

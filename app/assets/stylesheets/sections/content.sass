@@ -1,43 +1,54 @@
-.nav
-  li
-    a
-      color: #777
+.container
+  .about
+    text-align: center
+    margin-bottom: 4em
 
-      &:hover
-        background-color: transparent
-        color: #333
+    h1
+      font-size: 7rem
 
-.overview
-  padding: 0.5em 0em
-  margin: 0em auto 3em auto
-  max-width: 100%
+    p
+      font-size: 2rem
 
-  .overview-list
-    margin: 0
+  .nav
     li
-      float: left
-      margin-left: 1.5em
-      font-size: 1.25em
-      color: #8a8a8a
-
-      &:first-of-type
-        margin-left: 0
       a
+        color: #777
+
+        &:hover
+          background-color: transparent
+          color: #333
+
+  .overview
+    padding: 0.5em 0em
+    margin: 0em auto 3em auto
+    max-width: 100%
+
+    .overview-list
+      margin: 0
+      li
+        float: left
+        margin-left: 1.5em
+        font-size: 1.25em
+        color: #8a8a8a
+
         &:first-of-type
-          padding-left: 0
-        &:last-of-type
-          padding-right: 0
+          margin-left: 0
+        a
+          &:first-of-type
+            padding-left: 0
+          &:last-of-type
+            padding-right: 0
 
-  &::after,&::before
-    clear: both
-    display: table
-    content: ""
+    &::after,&::before
+      clear: both
+      display: table
+      content: ""
 
 
-.product-overlay
-  position: absolute
-  height: calc(100% - 15px)
-  width: calc(100% - 30px)
-  cursor: pointer
-  &:hover
-    background-color: rgba(0,0,0,0.15)
+  .product-overlay
+    position: absolute
+    height: calc(100% - 15px)
+    width: calc(100% - 30px)
+    cursor: pointer
+    &:hover
+      background-color: rgba(0,0,0,0.15)

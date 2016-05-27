@@ -13,42 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<!-- Start Navigation -->
- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Spintail</a>
-    </div>
-    <div class="navbar-collapse collapse" aria-expanded="false">
-    <ul class="nav navbar-nav">
-      <li>
-        <a href="">Home</a>
-      </li>
-      <li>
-        <a href="">About</a>
-      </li>
-      <li>
-        <a href="">Contact</a>
-      </li>
-    </ul>
-     <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="">Login</a>
-        </li>
-        <li>
-          <a href="">Sign up</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- End Navigation -->
+<%= render 'static_pages/nav' %>
 <!-- Start Jumbo -->
 <div class="jumbo">
   <div class="jumbo-price-block">
@@ -61,10 +26,12 @@
  <%= yield %>
 
 <div class="container">
-  <%= render 'static_pages/about' %>
+  <section class="about">
+    <h1>Spintail</h1>
+    <p>When you need something extra for your home</p>
+  </section>
   <h2> Products </h2>
   <div class="overview">
-
     <ul class="nav navbar-nav overview-list">
       <li>
         <a href="">All</a>
@@ -108,7 +75,7 @@
       <%= image_tag("item4.jpg", class: "img-responsive") %>
     </div>
   </div> <!-- end row -->
-  <%= render 'static_pages/contact' %>
+
 </div> <!-- end content footer -->
   <%= render 'static_pages/footer' %>
 </body>
