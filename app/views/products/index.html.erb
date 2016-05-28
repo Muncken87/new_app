@@ -1,4 +1,5 @@
 <%= render 'static_pages/nav' %>
+<%= render 'static_pages/sidebar' %>
 <p id="notice"><%= notice %></p>
 
 
@@ -24,6 +25,10 @@
       <div class="product-image-colour col col-md-6 col-sm-6">
           <p class="bold">Color</p>
           <p><%= product.colour %></p>
+      </div>
+      <div class="product-image-colour col col-md-6 col-sm-6">
+          <p class="bold">Price</p>
+          <p><%= product.price %></p>
       </div>
       <div class="clearfix"></div>
         <div class="product-edit-field col col-md-6 col-sm-6">
