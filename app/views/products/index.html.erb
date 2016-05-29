@@ -1,11 +1,11 @@
 <%= render 'static_pages/nav' %>
-<!-- <%= render 'static_pages/sidebar' %> -->
+ <%= render 'static_pages/sidebar' %>
 <p id="notice"><%= notice %></p>
 
 <div class="container products-view">
 <h1>Products</h1>
 <div class="row">
-    <% @products.each do |product| %>
+  <% @products.each do |product| %>
       <div class="product-image-field col col-md-6 col-sm-6">
         <p><%= image_tag(product.image_url, :class => "img-responsive") %></p>
       </div>
@@ -29,14 +29,13 @@
           <p class="bold">Price</p>
           <p><%= product.price %></p>
       </div>
-
       <div class="clearfix"></div>
         <div class="product-edit-field col col-md-6 col-sm-6">
           <p><%= link_to 'Show', product %></p>
           <p><%= link_to 'Edit', edit_product_path(product) %></p>
           <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
-          <div class="clearfix"></div>
-    <% end %>
-</div> <!-- end row -->
+      <div class="clearfix"></div>
+  <% end %>
+  </div> <!-- end row -->
 </div>
