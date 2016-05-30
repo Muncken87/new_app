@@ -21,14 +21,49 @@
     left: 70%
     transform: translate(-50%, -70%)
 
-    .info-text
-      margin-bottom: 0.25em
 
-      @media (max-width: 768px)
+.carousel
+  margin-bottom: 2em
+
+  .carousel-inner
+
+    .carousel-caption
+      position: absolute
+      top: 50%
+      left: 70%
+      transform: translate(-50%, -70%)
+      padding: 0
+      bottom: auto
+      right: auto
+      text-align: left
+
+      .info-text
+        margin-bottom: 0.25em
+        color: #333
+        text-shadow: none
+
+        @media (max-width: 768px)
+          font-size: 1.5em
+
+      .info-price
         font-size: 1.5em
+        color: #333
+        text-shadow: none
 
-    .info-price
-      font-size: 1.5em
+        @media (max-width: 768px)
+          font-size: 1.5em
 
-      @media (max-width: 768px)
-        font-size: 1.5em
+
+  .carousel-inner>.item
+    height: 100vh
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 50% 50%
+    background-attachment: fixed
+    width: 100%
+
+.carousel-indicators li
+  border: 2px solid #333
+
+.carousel-indicators .active
+  background-color: #333

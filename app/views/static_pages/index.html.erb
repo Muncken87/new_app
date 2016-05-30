@@ -13,15 +13,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<%= render 'static_pages/nav' %>
-<!-- Start Jumbo -->
-<div class="jumbo">
+<!--Start Jumbo -->
+ <!-- <div class="jumbo">
   <div class="jumbo-price-block">
     <h2 class="info-text">Sky Planter</h2>
     <span class="info-price"> $25.00</span>
   </div>
-</div>
+</div> -->
 
+<%= render partial: 'landing_page' %>
 <!-- End Jumbo -->
  <%= yield %>
 
@@ -77,6 +77,5 @@
   </div> <!-- end row -->
 
 </div> <!-- end content footer -->
-  <%= render 'footer' %>
 </body>
 </html>
