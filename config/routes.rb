@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :products
   resources :orders, only: [:index, :show, :create, :destroy]
-  root 'products#index'
+  root 'static_pages#index'
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'products' => 'products#index'

@@ -16,7 +16,7 @@
           <p>Add New Item </p>
         </button> -->
       <li>
-        <%= link_to "Products",  new_product_path %>
+        <%= link_to "Products",  products_path %>
       </li>
       <li>
         <%= link_to "About", about_path %>
@@ -24,17 +24,21 @@
       <li>
         <%= link_to "Contact", contact_path %>
       </li>
+      <li>
+        <%= link_to 'New Product', new_product_path, :class => "new_product" %>
+      </li>
     </ul>
      <ul class="nav navbar-nav navbar-right">
         <li>
           <a href="">Login</a>
         </li>
         <li>
-          <a href="">Sign up</a>
-        </li>
-        <li>
-          <%= link_to 'New Product', new_product_path, :class => "new_product" %>
-        </li>
+          <form class="form-inline"
+          <%= form_tag("/products", method: "get", class: "form-group") do %>
+          <%= text_field_tag(:q, nil, :placeholder =>'Enter search here', class: "form-control") %>
+          <%= submit_tag("Search", class: "btn btn-default", type: "submit") %>
+          <% end %>
+      </li>
       </ul>
     </div>
   </div>

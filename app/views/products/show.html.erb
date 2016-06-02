@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container">
+<div class="show">
+  <form accept-charset="UTF-8" action="/" method="post">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <input name="authenticity_token" type="hidden" value="J7CBxfHalt49OSHp27hblqK20c9PgwJ108nDHX/8Cts=" />
+  Form contents
+</form>
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -12,7 +18,7 @@
 
 <p>
   <strong>Image url:</strong>
-  <%= @product.image_url %>
+  <%= image_tag(@product.image_url,:size => "268x157")  %>
 </p>
 
 <p>
@@ -27,3 +33,5 @@
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+</div>
+</div>
