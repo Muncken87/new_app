@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'products' => 'products#index'
+  get 'orders' => 'orders#index'
   post 'static_pages/thank_you'
 
   # get 'static_pages/index'
