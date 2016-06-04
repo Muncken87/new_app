@@ -1,5 +1,5 @@
 <div class="container new-form">
-  <div class="col col-md-8">
+  <section>
   <%= form_for(@product) do |f| %>
     <% if @product.errors.any? %>
       <div id="error_explanation">
@@ -12,14 +12,14 @@
         </ul>
       </div>
     <% end %>
-
+    <h1>Editing Product</h1>
     <div class="field">
       <%= f.label :name %><br>
       <%= f.text_field :name %>
     </div>
     <div class="field">
       <%= f.label :description %><br>
-      <%= f.text_area :description %>
+      <%= f.text_area(:description, cols: 20, rows: 5) %>
     </div>
     <div class="field">
       <%= f.label :image_url %><br>
@@ -37,5 +37,5 @@
       <%= f.submit class: "btn btn-default" %>
     </div>
   <% end %>
-</div>
+</section>
 </div>

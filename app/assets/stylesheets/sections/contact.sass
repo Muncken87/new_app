@@ -1,8 +1,41 @@
 .contact-view
-  margin-top: 15em 
+  margin-top: 10em
 
   .contact
-    text-align: center
+    max-width: 550px
+    margin: 0 auto
 
-    h1,p
-      margin: 0
+  input[type="text"]
+    border: 1px solid #D1D1D1
+    border-radius: 4px
+    -webkit-box-shadow: none
+    box-shadow: none
+    width: 100%
+
+  textarea
+    border: 1px solid #D1D1D1
+    border-radius: 4px
+    -webkit-box-shadow: none
+    box-shadow: none
+    max-width: 100%
+    width: 100%
+
+  input[type="text"],textarea
+    &:hover,&:active,&:focus
+      outline: none
+      -webkit-box-shadow: none
+      box-shadow: none
+      outline: 0
+      border-color: #D1D1D1
+
+
+  .btn-default
+    background-color: #33C3F0
+    border-color: #33C3F0
+    color: white
+    padding: 0em 1em
+    height: 38px
+
+    &:hover
+      background-color: #1EAEDB
+      border-color: #1EAEDB
