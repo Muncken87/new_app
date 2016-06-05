@@ -12,11 +12,11 @@
   .nav
     li
       a
-        color: #777
+        color: $light-grey
 
         &:hover
           background-color: transparent
-          color: #333
+          color: $dark-grey
 
   .overview
     padding: 0.5em 0em
@@ -25,15 +25,24 @@
 
     .overview-list
       margin: 0
+
       li
         float: left
         margin-left: 1.5em
         font-size: 1.25em
-        color: #8a8a8a
+        color: $light-grey
+
+        &:focus
+          border: none
+          background-color: transparent
+          outline: none
+          outline: 0
 
         &:first-of-type
           margin-left: 0
         a
+          &:focus
+            outline: 0
           &:first-of-type
             padding-left: 0
           &:last-of-type

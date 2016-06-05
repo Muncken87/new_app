@@ -1,0 +1,44 @@
+.login-view
+  margin-top: 8em
+
+  .form-group
+    max-width: 550px
+
+    .field
+      margin: 1em 0em
+
+      input[type="email"], input[type="password"]
+        border: 1px solid #D1D1D1
+        border-radius: 4px
+        -webkit-box-shadow: none
+        box-shadow: none
+        width: 100%
+        -webkit-box-shadow: 0 0 0px 1000px white inset
+
+      input[type="text"]
+        &:hover,&:active,&:focus
+          outline: none
+          -webkit-box-shadow: none
+          box-shadow: none
+          outline: none
+
+      .actions
+        .btn-default
+          background-color: #33C3F0
+          border-color: #33C3F0
+          color: white
+          padding: 0em 1em
+          height: 38px
+
+          &:hover
+            background-color: #1EAEDB
+            border-color: #1EAEDB
+
+      input:-webkit-autofill
+        -webkit-box-shadow: 0 0 0px 1000px white inset
+
+.login-links
+  a
+    color: $dark-grey
+    margin: 0.5em 0em 0.5em 0em
+    display: block
