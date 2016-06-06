@@ -6,10 +6,15 @@
   width: 100%
   ul
     li
+      .dropdown-menu
+        margin-top: 7px
+        border: 1px solid $border-color
+        box-shadow: none
       a
-        color: #333
+        color: $dark-grey
         text-decoration: none
         font-size: 1.2em
+        display: inline-block
 
   .navbar-brand
     font-weight: bold
@@ -18,24 +23,24 @@
   .navbar-collapse
     border: none
 
-.hamburger
-  background: #318998
-  border-radius: 4px
-  text-decoration: none
-  z-index: 9999
-  position: fixed
-  left: 20px
-  top: 20px
-  padding: 0.7em
-  border: none
-  outline: none
-  transition: 0.2s ease
-
-  &:hover, &:visited, &:active
-    text-decoration: none
-    background: #318998
-
-  p
-    margin: 0
-    color: white
-    font-weight: bold
+// .hamburger
+//   background: #318998
+//   border-radius: 4px
+//   text-decoration: none
+//   z-index: 9999
+//   position: fixed
+//   left: 20px
+//   top: 20px
+//   padding: 0.7em
+//   border: none
+//   outline: none
+//   transition: 0.2s ease
+//
+//   &:hover, &:visited, &:active
+//     text-decoration: none
+//     background: #318998
+//
+//   p
+//     margin: 0
+//     color: white
+//     font-weight: bold

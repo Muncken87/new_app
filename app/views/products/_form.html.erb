@@ -1,5 +1,4 @@
-<div class="container new-form">
-  <section>
+
   <%= form_for(@product) do |f| %>
     <% if @product.errors.any? %>
       <div id="error_explanation">
@@ -12,7 +11,7 @@
         </ul>
       </div>
     <% end %>
-    <h1>Editing Product</h1>
+
     <div class="field">
       <%= f.label :name %><br>
       <%= f.text_field :name %>
@@ -38,5 +37,3 @@
     </div>
     <%= link_to 'Back', products_path %>
   <% end %>
-</section>
-</div>

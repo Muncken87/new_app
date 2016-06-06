@@ -18,6 +18,13 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @edit  = true
+  end
+  def new
+    @new  = true
+  end
+
   # GET /products/1
   # GET /products/1.json
   def show
