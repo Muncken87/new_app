@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'products' => 'products#index'
   get 'orders' => 'orders#index'
   post 'static_pages/thank_you'
+  get 'products_url' => 'products#show'
 
   # get 'static_pages/index'
 

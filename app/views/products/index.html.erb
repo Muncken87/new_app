@@ -3,6 +3,31 @@
 <!-- <p id="notice"><%= notice %></p> -->
 <div class="container products-view">
   <h1>Products</h1>
+  <div class="overview">
+    <ul class="nav navbar-nav overview-list">
+      <li>
+        <a href="">All</a>
+      </li>
+      <li>
+        <a href="">Office</a>
+      </li>
+      <li>
+        <a href="">Books & Magazines</a>
+      </li>
+      <li>
+        <a href="">Home</a>
+      </li>
+      <li>
+        <a href="">Children</a>
+      </li>
+      <li>
+        <a href="">Outdoor</a>
+      </li>
+      <li>
+        <a href="">Search</a>
+      </li>
+    </ul>
+  </div>
   <div class="row">
     <% @products.each do |product| %>
       <%= render product %>

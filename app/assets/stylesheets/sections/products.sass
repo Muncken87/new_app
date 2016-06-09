@@ -9,18 +9,54 @@
     font-weight: bold
     margin-bottom: 5px
 
-  .product
+  .products
     padding-bottom: 5px
+    position: relative
     .info-field
+      color: $light-grey
+      .name
+        font-size: 1.25em
 
-    .image-prices
+      .price
+        font-size: 1.25em
+        text-align: right
 
-    .name-field
 
-    .description-field
+    .product-overlay
+      position: absolute
+      overflow: hidden
+      top: 0
+      left: 0
+      opacity: 0
+      height: calc(100% - 80px)
+      width: 100%
+      cursor: pointer
+
+      &:hover
+        background-color: rgba(238,238,238,0.6)
+        opacity: 1
+
+      a
+        position: absolute
+        height: 100%
+        width: 100%
+        font-size: 0
+
+      p
+        position: absolute
+        left: 50%
+        top: 50%
+        color: #000
+        font-size: 2em
+        transform: translate(-50%, -50%)
+
+  &:after,&::before
+    clear: both
+    content: ""
+    display: table
 
   .edit-field
-    float: left
+
     p
       display: inline-block
       margin-left: 1em
@@ -30,3 +66,39 @@
 
     .new-product
       float: right
+
+// Products Show Page
+.products-show-page
+  margin-top: 5em
+
+  .name,.price,.description,.colour
+
+
+  .name
+    margin-top: 0
+
+  .price
+    color: $light-blue
+    margin-top: 0
+    position: relative
+    margin-bottom: 1em
+
+    &::after
+      content: "$"
+      margin-left: 5px
+      left: 42px
+      bottom: -5px
+
+  strong
+    display: inline-block
+
+  .description
+
+  .colour
+    display: inline-block
+
+  .placeholder
+    padding: 0
+
+  .thumbnails
+    margin-top: 1em

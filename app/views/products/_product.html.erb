@@ -1,12 +1,25 @@
-
-    <div class="product image-field col col-md-6 col-sm-6">
-      <p><%= image_tag(product.image_url, :class => "img-responsive") %></p>
+<div class="col col-md-4 col col-xs-6"style="overflow: hidden;">
+  <div class="products">
+  <p><%= image_tag(product.image_url, :class => "img-responsive") %>
+  </p>
+  <div class="product-overlay">
+    <%=link_to product.name, product %>
+    <p>View</p>
+  </div>
+  <div class="row clearfix">
+    <div class="info-field">
+      <p class="name col col-md-8"><%= product.name %></p>
+      <p class="price col col-md-4"><%= product.price %></p>
     </div>
-    <div class="product name-description col col-md-6 col-sm-6">
+  </div>
+</div>
+</div>
+
+    <!-- <div class="product name-description col col-md-6 col-sm-6">
         <p class="bold">Name</p>
         <p><%= product.name %></p>
-      </div>
-    <div class="product description-field col col-md-6 col-sm-6">
+      </div> -->
+    <!-- <div class="product description-field col col-md-6 col-sm-6">
         <p class="bold">Description</p>
         <p><%= product.description %></p>
     </div>
@@ -17,15 +30,14 @@
     <div class="product image-colour col col-md-6 col-sm-6">
         <p class="bold">Colour</p>
         <p><%= product.colour %></p>
-    </div>
-    <div class="product image-prices col col-md-6 col-sm-6">
+    </div> -->
+    <!-- <div class="product image-prices col col-md-6 col-sm-6">
         <p class="bold">Price</p>
-        <p><%= product.price %></p>
-    </div>
-    <div class="clearfix"></div>
-      <div class="product edit-field col col-md-6 col-sm-6">
-        <p><%= link_to 'Show', product %></p>
-        <p><%= link_to 'Edit', edit_product_path(product) %></p>
-        <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
-    <div class="clearfix"></div>
+        <p><%= product.price %></p> -->
+   <!-- </div> -->
+   <!-- <div class=" edit-field ">
+     <p><%= link_to 'Show', product %></p>
+     <p><%= link_to 'Edit', edit_product_path(product) %></p>
+     <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+   </div> -->
+    <!-- <div class="clearfix"></div> -->
