@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :users
-  resources :products
+  resources :products do
+    resources :comments
+  end
   resources :orders, only: [:index, :show, :create, :destroy]
   devise_for :users,:controllers => { :registrations => "users/registrations" }, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout',:sign_up => 'signup', :edit_user => 'edit'}
 

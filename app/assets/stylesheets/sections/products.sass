@@ -73,7 +73,6 @@
 
   .name,.price,.description,.colour
 
-
   .name
     margin-top: 0
 
@@ -99,6 +98,40 @@
 
   .placeholder
     padding: 0
+    border: 5px solid transparent
 
   .thumbnails
-    margin-top: 1em
+    margin: 5px -5px 5px -5px
+
+  .new_comment
+    overflow: hidden
+
+    input,textarea
+      border: 1px solid $border-color
+      border-radius: 4px
+      -webkit-box-shadow: none
+      box-shadow: none
+      max-width: 100%
+      width: 100%
+
+    input[type="text"],textarea
+      outline: none
+
+      &:hover, &:focus
+        outline: none
+        box-shadow: none
+        border-color: $border-color
+
+    .btn-default
+      background-color: #33C3F0
+      border-color: #33C3F0
+      color: white
+      padding: 0em 1em
+      height: 38px
+
+      &:hover
+        background-color: #1EAEDB
+        border-color: #1EAEDB
+
+    .rating,.review-text
+      margin-bottom: 1em
