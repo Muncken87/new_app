@@ -3,7 +3,8 @@
       <hr>
       <p class="comment-user-name"><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
       <p><%= comment.body %></p>
+      <p><%= "Rating: #{comment.rating}/5" %></p>
       <div class="rated" data-score="<%= comment.rating %>"></div>
-
     <% end %>
+    <%= will_paginate @comments %>
 </div>
