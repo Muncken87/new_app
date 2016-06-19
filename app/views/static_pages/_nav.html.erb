@@ -12,12 +12,14 @@
     </div>
     <div class="navbar-collapse collapse" aria-expanded="false">
     <ul class="nav navbar-nav"role="navigation">
+      <% if signed_in? && current_user.admin? %>
       <% unless controller_name == "static_pages" %>
       <li>
         <a href="" class="hamburger btn btn-default">
             Add New Item
         </a>
       </li>
+      <% end %>
       <% end %>
       <li>
         <%= link_to "Products",  products_path %>
@@ -32,10 +34,8 @@
         <%= link_to "Orders", orders_path %>
       </li>
       <li>
-        <% if user_signed_in? %>
+        <% if signed_in? && current_user.admin? %>
           <%= link_to 'New Product', new_product_path, :class => "new_product" %>
-        <% else %>
-
         <% end %>
       </li>
     </ul>
