@@ -7,6 +7,7 @@
       <th>#</th>
       <th>First name</th>
       <th>Last name</th>
+      <th>Email</th>
       <th>Show user</th>
       <th>Edit user</th>
       <th>Destroy user</th>
@@ -19,6 +20,7 @@
           <th><%= user.id %></th>
           <th><%= user.first_name %></th>
           <th><%= user.last_name %></th>
+          <th><%= user.email %></th>
           <th><%= link_to 'Show', user %></th>
           <th><%= link_to 'Edit', edit_user_path(user) %></th>
           <th><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></th>

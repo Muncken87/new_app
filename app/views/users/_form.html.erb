@@ -1,3 +1,4 @@
+<section class="form-group">
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -13,13 +14,18 @@
 
   <div class="field">
     <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, class: "form-control", autofocus: true %>
   </div>
   <div class="field">
     <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name,class: "form-control", autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email,class: "form-control", autofocus: true %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", class: "btn btn-default" %>
   </div>
 <% end %>
+</section>

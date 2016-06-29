@@ -1,16 +1,42 @@
 .listing-user
   margin-top: 10em
 
-  h1
-    margin: 1em 0em
+  section
+    max-width: 550px
 
-  .actions
+    .field
+      margin: 1em 0em
 
-    .btn-default
-      background-color: $light-blue
-      border-color: $light-blue
-      color: white
+    input[type="text"]
+      border: 1px solid $border-color
+      border-radius: 4px
+      -webkit-box-shadow: none
+      box-shadow: none
+      width: 100%
+      padding: 0.5em
 
-      &:hover
-        background-color: $light-blue-hover
-        border-color: $light-blue-hover
+    textarea
+      border: 1px solid $border-color
+      border-radius: 4px
+      -webkit-box-shadow: none
+      box-shadow: none
+      max-width: 100%
+      width: 100%
+      padding: 0.5em
+
+    input[type="text"],textarea
+      &:hover,&:active,&:focus
+        outline: none
+        -webkit-box-shadow: none
+        box-shadow: none
+        outline: none
+
+    .actions
+      .btn-default
+        background-color: $light-blue
+        border-color: $light-blue
+        color: white
+
+        &:hover
+          background-color: $light-blue-hover
+          border-color: $light-blue-hover
