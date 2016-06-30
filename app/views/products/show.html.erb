@@ -5,29 +5,15 @@
     <input name="authenticity_token" type="hidden" value="J7CBxfHalt49OSHp27hblqK20c9PgwJ108nDHX/8Cts=" />
   </form>
   <div class="row">
-    <div class="col col-md-6">
+
+    <div class="col col-md-8">
       <%= image_tag(@product.image_url, class: "img-responsive")  %>
-      <div class="thumbnails">
-        <div class="col col-md-3 col-xs-3 placeholder">
-          <%= image_tag("item1.jpg",class: "img-responsive")%>
-        </div>
-        <div class="col col-md-3 col-xs-3 placeholder">
-          <%= image_tag("item2.jpg",class: "img-responsive")%>
-        </div>
-        <div class="col col-md-3 col-xs-3 placeholder">
-          <%= image_tag("item3.jpg",class: "img-responsive")%>
-        </div>
-        <div class="col col-md-3 col-xs-3 placeholder">
-            <%= image_tag("item4.jpg",class: "img-responsive")%>
-        </div>
-            <div class="clearfix"></div>
-      </div>
       <%= link_to 'Edit', edit_product_path(@product) %> |
       <%= link_to 'Back', products_path %>
       <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
 
-    <div class="col col-md-6">
+    <div class="col col-md-4">
       <h1 class="name"><%= @product.name %></h1>
         <p><div class="rated" data-score="<%= @product.average_rating %>"></div></p>
       <h2 class="price"><%= @product.price %></h2>
@@ -35,8 +21,13 @@
       <p class="description"><%= @product.description %></p>
       <strong>Color:</strong>
       <p class="colour"><%= @product.colour %></p>
+    </div>
+
+    </div><!-- row -->
+  </div>
+  <div class="row">
+    <div class="col col-md-6">
       <% if signed_in? %>
-        <hr>
         <h4>Add a review:</h4>
           <%= form_for([@product, @product.comments.build]) do |f| %>
 
@@ -49,7 +40,5 @@
       <% end %>
       <%= render 'comments' %>
     </div>
-    <div class="clearfix"></div>
   </div>
-  </div>
-</div>
+</div> <!-- end container -->
