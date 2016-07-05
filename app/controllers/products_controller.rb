@@ -22,12 +22,6 @@ class ProductsController < ApplicationController
     @hamburger = true
   end
 
-  def edit
-    @edit  = true
-  end
-  def new
-    @new  = true
-  end
 
   # GET /products/1
   # GET /products/1.json
@@ -42,6 +36,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @product = Product.find(params[:id])
   end
 
   # POST /products
@@ -77,11 +72,10 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    @product = Product.find(params[:id])
     @product.destroy
-    respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to products_path
+
   end
 
   private
