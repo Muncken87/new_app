@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users
   resources :products do
     resources :comments
@@ -15,10 +16,4 @@ Rails.application.routes.draw do
   post 'static_pages/thank_you'
   get 'products_url' => 'products#show'
 
-  # get 'static_pages/index'
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
 end
