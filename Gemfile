@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '5.0.0'
 gem 'rubocop', '~> 0.39.0'
 gem 'puma', '~> 3.0'
+gem 'ratyrate'
+gem 'rails-controller-testing'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -43,6 +45,10 @@ group :development, :test do
   gem 'byebug'
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.4'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'database_cleaner'
+  gem 'faker'
+
 end
 
 group :development do

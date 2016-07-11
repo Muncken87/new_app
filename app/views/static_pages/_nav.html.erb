@@ -12,7 +12,7 @@
     </div>
     <div class="navbar-collapse collapse" aria-expanded="false">
     <ul class="nav navbar-nav"role="navigation">
-      <% if signed_in? && current_user.admin? %>
+      <!-- <% if signed_in? && current_user.admin? %>
       <% unless controller_name == "static_pages" %>
       <li>
         <a href="" class="hamburger btn btn-default">
@@ -20,7 +20,7 @@
         </a>
       </li>
       <% end %>
-      <% end %>
+      <% end %> -->
       <li>
         <%= link_to "Products",  products_path %>
       </li>
