@@ -18,11 +18,11 @@ let(:user) { FactoryGirl.create(:user) }
         expect(assigns(:user)).to eq user
       end
 
-    context "No user is logged in" do
-      it "redirects to login page" do
-        get :show, id: user.id
-        expect(response).to redirect_to(root_path)
-      end
+
+    it "should not validate users without an email address" do
+      @user = FactoryGirl.build(:user, email: "not_an_email")
+      expect(@user).to_not be_valid
     end
+
 end
 end
