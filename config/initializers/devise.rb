@@ -6,8 +6,8 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'ab5729d34220998d7c61cf0028f46f9c576f0af72f33c48076345ac49e81ef2de9fc400494a906cf5fa743aaf109cb6b93ce6c8c95400b57ca5d3c360cd9e933'
-
+  # config.secret_key = 'd5c4a75663d607b909db7ad7f3824ef689b1a45f8f6dd8082d76725db139296d8fffadb9335d26003c22bb34ee90ccb5f0ec4e26d608ce4775f4f4a43951b2f0'
+config.secret_key = '<%= ENV["SECRET_KEY_BASE"] %>' if Rails.env == 'production'
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -90,6 +90,12 @@ Devise.setup do |config|
   # from the server. You can disable this option at your own risk.
   # config.clean_up_csrf_token_on_authentication = true
 
+  # When false, Devise will not attempt to reload routes on eager load.
+  # This can reduce the time taken to boot the app but if your application
+  # requires the Devise mappings to be loaded during boot time the application
+  # won't boot properly.
+  # config.reload_routes = true
+
   # ==> Configuration for :database_authenticatable
   # For bcrypt, this is the cost for hashing the password and defaults to 11. If
   # using other algorithms, it sets how many times you want the password to be hashed.
@@ -102,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '61d0c22dc8df3b74e05dccb9e4143c9abf17a2fde363edcfe6076f79cd8cd685107eac1954986ee1f3a84f45ed9aaecdb0d9477ccf55c14ad243bbbe2bde524c'
+  # config.pepper = '02afb2c4ab2291d113054851d6d2ae24ae0160eb18c9a73e4d2f01caf2aeacc9d865eb11d8ab89ec6ecde2d3685946d5b59a986d1a50f4edb09e77f30512ac31'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
