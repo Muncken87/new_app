@@ -21,6 +21,9 @@
       <p class="description"><%= @product.description %></p>
       <strong>Color:</strong>
       <p class="colour"><%= @product.colour %></p>
+    <%= form_tag "/payments/create" do %>
+      <%= render partial: "shared/stripe_checkout_button" %>
+    <% end %>
     </div>
 
     </div><!-- row -->

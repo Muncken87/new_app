@@ -6,6 +6,7 @@ gem 'rubocop', '~> 0.39.0'
 gem 'puma', '~> 3.0'
 gem 'ratyrate'
 gem 'rails-controller-testing'
+gem 'stripe'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -31,6 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 # CanCanCan
 gem 'cancancan', '~> 1.10'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
