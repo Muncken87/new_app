@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.0'
+gem 'rails', '4.2.6'
 gem 'rubocop', '~> 0.39.0'
 gem 'puma', '~> 3.0'
 gem 'ratyrate'
@@ -48,6 +48,10 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
   gem 'database_cleaner'
   gem 'faker'
+  gem 'guard'
+  gem 'guard-rspec', require: false
+  gem 'spork-rails', '~> 4.0', git: 'https://github.com/sporkrb/spork-rails.git'
+  gem 'guard-spork'
 
 end
 

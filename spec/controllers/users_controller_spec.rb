@@ -3,7 +3,7 @@ require 'rails_helper'
 
 describe UsersController, :type => :controller do
 
-let(:user) { FactoryGirl.create(:user) }
+let(:user) { create(:user) }
 
   describe "GET #show" do
     context "User is logged in" do
@@ -23,6 +23,13 @@ let(:user) { FactoryGirl.create(:user) }
       @user = FactoryGirl.build(:user, email: "not_an_email")
       expect(@user).to_not be_valid
     end
+
+    # context "No user is logged in" do
+    #   it "redirects to login page" do
+    #     get :show, id: user.id
+    #     expect(response).to redirect_to(root_path)
+    #   end
+    # end
 
 end
 end
