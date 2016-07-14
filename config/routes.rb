@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   get 'orders' => 'orders#index'
   post 'static_pages/thank_you'
   get 'products_url' => 'products#show'
+  post 'payments/create'
 
 end
