@@ -33,4 +33,3 @@ class PaymentsController < ApplicationController
     redirect_to payment_path(@order)
   end
 end
-end
