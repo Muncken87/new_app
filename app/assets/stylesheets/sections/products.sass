@@ -76,17 +76,21 @@
   .name
     margin-top: 0
 
+  .product-image
+    margin-bottom: 1em
+
   .price
-    color: $light-blue
+    color: $light-grey
     margin-top: 0
     position: relative
     margin-bottom: 1em
+    position: relative
 
     &::after
       content: "$"
-      margin-left: 5px
-      left: 42px
-      bottom: -5px
+      position: absolute
+      left: 22px
+      bottom: -4px
 
   strong
     display: inline-block
