@@ -16,11 +16,10 @@ class PaymentsController < ApplicationController
         :source => token,
         :description => params[:stripeEmail]
       )
-    if signed_in?
-    if charge.paid
+    if signed_in? && charge.paid
       Order.create(product_id: @product.id, user_id: current_user.id, total: @product.price)
     else
-      Order.create(product_id: @product.id, total: @product.price)
+      redirect_to product_path(@products)
     end
   end
 
