@@ -10,17 +10,25 @@
     margin-bottom: 5px
 
   .products
-    padding-bottom: 5px
+    // padding-bottom: 10px
     position: relative
     .info-field
       color: $light-grey
       .name
         font-size: 1.25em
+        font-weight: 200
+        margin: 0
+        padding-top: 10px
 
       .price
         font-size: 1.25em
         text-align: right
+        color: $black
+        margin: 0
+        padding-top: 10px
 
+    p
+      margin: 0
 
     .product-overlay
       position: absolute
@@ -28,7 +36,7 @@
       top: 0
       left: 0
       opacity: 0
-      height: calc(100% - 50px)
+      height: 100%
       width: 100%
       cursor: pointer
 
@@ -139,3 +147,11 @@
 
     .rating,.review-text
       margin-bottom: 1em
+
+// Masonry
+
+.grid-sizer,.grid-item
+  width: 33%
+
+  @media (max-width: 768px)
+    width: 50%

@@ -28,7 +28,8 @@
     </ul>
   </div>
   <%= render 'sidebar' %>
-  <div class="row">
+  <div class="row grid">
+    <div class="grid-sizer"></div>
     <% @products.each do |product| %>
       <%= render product %>
     <% end %>

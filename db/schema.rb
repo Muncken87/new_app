@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -14,8 +15,8 @@ ActiveRecord::Schema.define(version: 20160710200454) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
-    t.string   "rateable_type"
     t.integer  "rateable_id"
+    t.string   "rateable_type"
     t.float    "avg",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -28,21 +29,23 @@ ActiveRecord::Schema.define(version: 20160710200454) do
     t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_comments_on_product_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
+
+  add_index "comments", ["product_id"], name: "index_comments_on_product_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
     t.integer "product_id"
     t.float   "total"
-    t.index ["product_id"], name: "index_orders_on_product_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  add_index "orders", ["product_id"], name: "index_orders_on_product_id"
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
+
   create_table "overall_averages", force: :cascade do |t|
-    t.string   "rateable_type"
     t.integer  "rateable_id"
+    t.string   "rateable_type"
     t.float    "overall_avg",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -61,26 +64,28 @@ ActiveRecord::Schema.define(version: 20160710200454) do
 
   create_table "rates", force: :cascade do |t|
     t.integer  "rater_id"
-    t.string   "rateable_type"
     t.integer  "rateable_id"
+    t.string   "rateable_type"
     t.float    "stars",         null: false
     t.string   "dimension"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["rateable_id", "rateable_type"], name: "index_rates_on_rateable_id_and_rateable_type"
-    t.index ["rater_id"], name: "index_rates_on_rater_id"
   end
 
+  add_index "rates", ["rateable_id", "rateable_type"], name: "index_rates_on_rateable_id_and_rateable_type"
+  add_index "rates", ["rater_id"], name: "index_rates_on_rater_id"
+
   create_table "rating_caches", force: :cascade do |t|
-    t.string   "cacheable_type"
     t.integer  "cacheable_id"
+    t.string   "cacheable_type"
     t.float    "avg",            null: false
     t.integer  "qty",            null: false
     t.string   "dimension"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
   end
+
+  add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -98,8 +103,9 @@ ActiveRecord::Schema.define(version: 20160710200454) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "admin",                  default: false, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
