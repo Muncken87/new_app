@@ -2,9 +2,6 @@
   margin-top: 10em
   margin-bottom: 10em
 
-  h1
-    margin-bottom: 1em
-
   .bold
     font-weight: bold
     margin-bottom: 5px
@@ -45,12 +42,8 @@
 
         .price
           font-size: 1.25em
-          text-align: center
           color: $black
           margin: 0
-          padding-top: 10px
-
-
 
   &:after,&::before
     clear: both
@@ -72,75 +65,92 @@
 // Products Show Page
 .products-show-page
   margin-top: 5em
+  margin-bottom: 5em
 
-  .name,.price,.description,.colour
+  .show
 
-  .name
-    margin-top: 0
+    .product-show
+      .btn
+        height: 34px
+        padding: 0
+      .btn-default
+        &:hover, &:focus, &:active
+          outline: none
+          box-shadow: none
+          background-color: #FBFBFB
+          border-color: #f4f4f4
 
-  .product-image
-    margin-bottom: 1em
+      .btn-default a
+        color: #333
+        text-decoration: none
+        padding: 8px 12px
 
-  .price
-    color: $light-grey
-    margin-top: 0
-    position: relative
-    margin-bottom: 1em
-    position: relative
+      .name
+        margin-top: 0
 
-    &::after
-    content: "$"
-    position: relative
-    left: 5px
-    bottom: -5px
+      .product-image
+        margin-bottom: 1em
 
-  strong
-    display: inline-block
+      .price
+        color: $light-grey
+        margin-top: 0
+        position: relative
+        margin-bottom: 1em
+        position: relative
 
-  .description
+        &::after
+          content: "$"
+          position: relative
+          left: 5px
+          bottom: -5px
 
-  .colour
-    display: inline-block
+      strong
+        display: block
 
-  .placeholder
-    padding: 0
-    border: 5px solid transparent
+      .description
 
-  .thumbnails
-    margin: 5px -5px 5px -5px
+      .colour
+        display: inline-block
 
-  .new_comment
-    overflow: hidden
+      .placeholder
+        padding: 0
+        border: 5px solid transparent
 
-    input,textarea
-      border: 1px solid $border-color
-      border-radius: 4px
-      -webkit-box-shadow: none
-      box-shadow: none
-      max-width: 100%
-      width: 100%
+      .thumbnails
+        margin: 5px -5px 5px -5px
 
-    input[type="text"],textarea
-      outline: none
+      .new_comment
+        overflow: hidden
 
-      &:hover, &:focus
-        outline: none
-        box-shadow: none
-        border-color: $border-color
+        input,textarea
+          border: 1px solid $border-color
+          border-radius: 4px
+          -webkit-box-shadow: none
+          box-shadow: none
+          max-width: 100%
+          width: 100%
 
-    .btn-default
-      background-color: #33C3F0
-      border-color: #33C3F0
-      color: white
-      padding: 0em 1em
-      height: 38px
+        input[type="text"],textarea
+          outline: none
 
-      &:hover
-        background-color: #1EAEDB
-        border-color: #1EAEDB
+          &:hover, &:focus
+            outline: none
+            box-shadow: none
+            border-color: $border-color
 
-    .rating,.review-text
-      margin-bottom: 1em
+        .btn-default
+          background-color: #33C3F0
+          border-color: #33C3F0
+          color: white
+          padding: 0em 1em
+          height: 38px
+
+          &:hover
+            background-color: #1EAEDB
+            border-color: #1EAEDB
+
+        .rating,.review-text
+          margin-bottom: 1em
 
 // Masonry
 

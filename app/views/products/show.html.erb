@@ -4,17 +4,17 @@
     <input name="utf8" type="hidden" value="&#x2713;" />
     <input name="authenticity_token" type="hidden" value="J7CBxfHalt49OSHp27hblqK20c9PgwJ108nDHX/8Cts=" />
   </form>
-  <div class="row">
 
-    <div class="col col-md-8">
+
+    <div class="product-show">
       <%= image_tag(@product.image_url, class: "img-responsive product-image")  %>
-      <%= link_to 'Edit', edit_product_path(@product) %>
-      <%= link_to 'Back', products_path %>
-      <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <button class="btn btn-default"><%= link_to 'Edit', edit_product_path(@product)%></button>
+      <button class="btn btn-default"><%= link_to 'Back', products_path %></button>
+    <button class="btn btn-default">  <%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %></button>
     </div>
-
-    <div class="col col-md-4">
-      <h1 class="name"><%= @product.name %></h1>
+  <div class="row">
+    <div class="col col-md-6">
+      <h2 class="name"><%= @product.name %></h2>
         <p><div class="rated" data-score="<%= @product.average_rating %>"></div></p>
       <h2 class="price"><%= @product.price %></h2>
       <strong>Description:</strong>
@@ -23,30 +23,104 @@
       <p class="colour"><%= @product.colour %></p>
       <strong>Category:</strong>
       <p class="category"><%= @product.category %></p>
-    <% if signed_in? %>
-      <%= form_tag "/payments/create" do %>
-        <%= render partial: "shared/stripe_checkout_button" %>
-      <% end %>
-    <% else %>
-    <% end %>
-    </div>
-
-    </div><!-- row -->
-  </div>
-  <div class="row">
-    <div class="col col-md-6">
       <% if signed_in? %>
-        <h4>Add a review:</h4>
-          <%= form_for([@product, @product.comments.build]) do |f| %>
-
-              <%= f.label :body, "Comments" %><br>
-              <%= f.text_area :body, class: "form-control review-text" %>
-              <%= f.label :rating %><br>
-              <div class="rating"></div>
-              <%= f.submit "Submit", class: "btn btn-default" %>
-          <% end %>
+        <%= form_tag "/payments/create" do %>
+          <%= render partial: "shared/stripe_checkout_button" %>
+        <% end %>
+      <% else %>
       <% end %>
-      <%= render 'comments' %>
     </div>
-  </div>
+    <div class="col col-md-6">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Specifications
+                <span class="caret pull-right"></span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Comments
+                <span class="caret pull-right"></span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+              <% if signed_in? %>
+                <h4>Add a review:</h4>
+                  <%= form_for([@product, @product.comments.build]) do |f| %>
+
+                      <%= f.label :body, "Comments" %><br>
+                      <%= f.text_area :body, class: "form-control review-text" %>
+                      <%= f.label :rating %><br>
+                      <div class="rating"></div>
+                      <%= f.submit "Submit", class: "btn btn-default" %>
+                  <% end %>
+              <% end %>
+              <%= render 'comments' %>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Description
+                <span class="caret pull-right"></span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+              <h4><b>MSI Geforce GTX 750Ti Gaming OC</b></h4>
+               <p>är ett prisvärt grafikkort med 2GB minne och effektiv kylningsteknik. Kortet är tillverkat av de absolut bästa komponenterna och har alla unika egenskaper som MSI erbjuder. Grafikkortet är laddat med de fantastiska teknikerna NVIDIA erbjuder. Luta dig tillbaka och njut av häftiga spelsessioner.</p>
+
+              <p>Geforce GTX 750Ti Gaming OC 2G
+              Byggd i allra bästa material
+              MSI väljer bara komponenter av allra högsta kvalité och som fungerar perfekt i symbios. Du kan vara säker på att grafikkortet skall klara tufft spelande.</p>
+
+              <h4><b>MSI GAMING-app</b></h4>
+              <p>Med MSI GAMING-app kan du enkelt ställa in grafikkortets prestanda.</p>
+
+              <b>OC Mode - Skruvar upp klockfrekvensen och fläkthastigheten för bäst prestanda.</b>
+
+              <b>Gaming Mode - Ger en stabil spelupplevelse med hög klockfrekvens.</b>
+
+              <b>Silent Mode - Tyst läge ger en otroligt låg ljudnivå.</b>
+
+              <h4><b>MSI gaming app</b></h4>
+              <p>MSI Afterburner - unika överklockningsmöjligheter
+              MSI Afterburner har snabbt blivit favoriten bland överklockningsmjukvara. Det är enkelt att lära sig och använda, samtidigt som det är laddat med avancerande funktioner. Gör Afterburner unik efter smak och tycke, med mängder av skins anpassar du det efter dig och dina behov. Du kan även köra MSI Afterburner från din smartphone eller surfplatta, programvaran finns att ladda ner på Google play och Apple store.</p>
+
+              <h4><b>NVIDIA® PhysX®</b></h4>
+              <p>Med NVIDIA® PhysX® kan du spela spel med avancerade effekter såsom explosioner och verklighetstrogna figurer med 10 snabbare växling mellan grafik- och fysikbearbetning. Detta leder till att mer komplexa effekter kan visas i realtid.</p>
+
+              <h4><b>NVIDIA® GPU Boost 2.0</b></h4>
+              <p>Med NVIDIA ® GPU Boost 2.0® höjer du prestandan ännu mer på grafikkortet. Denna teknik övervakar aktivt  tempraturen på grafikkortet för att maximera den dynamiska klockfrekvensen, detta garanterar att du alltid får den absolut bästa möjliga prestanda i varje spel./p>
+
+
+              <h4><b>NVIDIA® Adaptive V-Sync</b></h4>
+              <p>Med NVIDIA® Adaptive V-Sync får du inte bara högre bildrutefrekvens utan även inga bildruteproblem. Denna teknik justerar dynamiskt V-Sync till aktuell bildrutefrekvens för bästa spelupplevelse./p>
+
+              <h4><b>NVIDIA ® 3D Vision™</b></h4>
+              <p>Med NVIDIA 3D Vision får du tillsammans med kompatibla skärmar och 3D-glasögon uppleva hundratals PC-spel i full stereoskopisk 3D. Du kan dessutom titta på 3D-filmer och 3D digitala fotografier./p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- row -->
+</div>
 </div> <!-- end container -->
