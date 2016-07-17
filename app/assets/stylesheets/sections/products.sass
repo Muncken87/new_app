@@ -31,21 +31,17 @@
 
       .info-field
         color: $light-grey
-        position: absolute
-        top: 0
-        left: 0
-        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
         height: 100%
         text-align: center
+        flex-direction: column
 
         .name
           font-size: 1.5em
           font-weight: 700
           color: #000
-          position: absolute
-          top: 50%
-          left: 50%
-          transform: translate(-50%, -50%)
 
         .price
           font-size: 1.25em
@@ -53,10 +49,7 @@
           color: $black
           margin: 0
           padding-top: 10px
-          position: absolute
-          top: 65%
-          left: 50%
-          transform: translate(-50%, -65%)
+
 
 
   &:after,&::before

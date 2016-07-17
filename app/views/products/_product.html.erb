@@ -1,15 +1,16 @@
 <div class="grid-item"style="overflow: hidden;">
   <!-- col col-lg-4 col-md-6 col-sm-6 col-xs-12 -->
-  <div class="products category" data-category="<%= product.category %>">
+  <div class="products " data-category="<%= product.category %>">
   <p><%= image_tag(product.image_url, :class => "img-responsive") %></p>
   <%=link_to product_path(product) do %>
-  <div class="product-overlay">
-    <div class="info-field">
-      <p class="name col col-md-8 col-xs-8"><%= product.name %></p>
-      <p class="price col col-md-4 col-xs-4"><%= number_to_currency product.price %></p>
+    <div class="product-overlay">
+      <div class="info-field">
+        <p class="name"><%= product.name %></p>
+        <p class="price"><%= number_to_currency product.price %></p>
+        <p class="category"><%= product.category %></p>
+      </div>
     </div>
-  </div>
-    <% end %>
+  <% end %>
 <div class="row clearfix">
   </div>
 </div>
