@@ -28,6 +28,11 @@
     </ul>
   </div>
   <%= render 'sidebar' %>
+  <h2>Sort</h2>
+<div id="sorts" class="button-group">
+  <button class="button" data-sort-by="name">Name</button>
+  <button class="button" data-sort-by="house">House</button>
+</div>
   <div class="row grid">
     <div class="grid-sizer"></div>
     <% @products.each do |product| %>

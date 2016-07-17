@@ -7,6 +7,7 @@
       <th>#</th>
       <th>First name</th>
       <th>Last name</th>
+      <th>Admin</th>
       <th>Email</th>
       <th>Show user</th>
       <th>Edit user</th>
@@ -14,12 +15,17 @@
     </tr>
   </thead>
   <tbody>
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.admin %>
       <% @users.each do |user| %>
         <tr>
           <th><%= user.id %></th>
           <th><%= user.first_name %></th>
           <th><%= user.last_name %></th>
+          <% if user.admin? %>
+            <th>Yes</th>
+          <% else %>
+            <th>No</th>
+          <% end %>
           <th><%= user.email %></th>
           <th><%= link_to 'Show', user %></th>
           <th><%= link_to 'Edit', edit_user_path(user) %></th>

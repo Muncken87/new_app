@@ -43,13 +43,10 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-     logger.debug "New product: #{@product.attributes.inspect}"
-     logger.debug "product should be valid: #{@product.valid?}"
 
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.'}
-        logger.debug "The product was saved and now the user is going to be redirected..."
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -88,6 +85,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :image_url, :colour, :price)
+      params.require(:product).permit(:name, :description, :image_url, :colour, :price, :category)
     end
 end

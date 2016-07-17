@@ -18,20 +18,51 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <%= csrf_meta_tags %>
   <script type="text/javascript">
-  $(document).ready(function() {
-      $(".dropdown-toggle").dropdown();
-  });
+    $(document).ready(function() {
+        $(".dropdown-toggle").dropdown();
+    });
   </script>
   <script type="text/javascript">
-  var $grid = $('.grid').masonry({
-    itemSelector: '.grid-item',
-    percentPosition: true,
-    columnWidth: '.grid-sizer'
-  });
-  // layout Isotope after each image loads
-  $grid.imagesLoaded().progress( function() {
-    $grid.masonry('layout');
-  });
+    var $grid = $('.grid').masonry({
+      itemSelector: '.grid-item',
+      percentPosition: true,
+      columnWidth: '.grid-sizer'
+    });
+    // layout Isotope after each image loads
+    $grid.imagesLoaded().progress( function() {
+      $grid.masonry('layout');
+    });
   </script>
+  <script type="text/javascript">
+  var $grid = $('.grid').isotope({
+    itemSelector: '.grid-item',
+    getSortData: {
+      name: '.name',
+      symbol: '.symbol',
+      number: '.number parseInt',
+      category: '[data-category]',
+      weight: function( itemElem ) {
+        var weight = $( itemElem ).find('.weight').text();
+        return parseFloat( weight.replace( /[\(\)]/g, '') );
+      }
+    }
+  });
+  // bind filter button click
+  // bind sort button click
+  $('#sorts').on( 'click', 'button', function() {
+    var sortByValue = $(this).attr('data-sort-by');
+    $grid.isotope({ sortBy: sortByValue });
+  });
+
+  // change is-checked class on buttons
+  $('.button-group').each( function( i, buttonGroup ) {
+    var $buttonGroup = $( buttonGroup );
+    $buttonGroup.on( 'click', 'button', function() {
+      $buttonGroup.find('.is-checked').removeClass('is-checked');
+      $( this ).addClass('is-checked');
+    });
+  });
+
+</script>
 </body>
 </html>
