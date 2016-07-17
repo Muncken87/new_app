@@ -3,37 +3,28 @@
 <div class="container products-view">
   <h1>Products</h1>
   <div class="overview">
-    <ul class="nav navbar-nav overview-list">
+    <ul class="nav navbar-nav overview-list link-group sort-link-group">
       <li>
-        <a href="">All</a>
+        <a class="sort is-checked " data-category="all">All</a>
       </li>
       <li>
-        <a href="">Office</a>
+        <a class="sort" data-category="House">Home</a>
       </li>
       <li>
-        <a href="">Books & Magazines</a>
+        <a class="sort" data-category="Poster">Books & Magazines</a>
       </li>
       <li>
-        <a href="">Home</a>
-      </li>
-      <li>
-        <a href="">Children</a>
-      </li>
-      <li>
-        <a href="">Outdoor</a>
-      </li>
-      <li>
-        <a href="">Search</a>
+        <a class="sort" data-category="Clock">Clock</a>
       </li>
     </ul>
   </div>
   <%= render 'sidebar' %>
   <h2>Sort</h2>
-<div id="sorts" class="button-group">
+ <!-- <div id="sorts" class="button-group">
   <button class="button" data-sort-by="name">Name</button>
   <button class="button" data-sort-value="category">Category</button>
-</div>
-  <div class="row grid">
+</div>  -->
+  <div class="grid">
     <div class="grid-sizer"></div>
     <% @products.each do |product| %>
       <%= render product %>

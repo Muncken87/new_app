@@ -1,13 +1,13 @@
-<div class="grid-item"style="overflow: hidden;">
+<div class="grid-item <%= product.category %> <%= product.name %>"style="overflow: hidden;">
   <!-- col col-lg-4 col-md-6 col-sm-6 col-xs-12 -->
-  <div class="products " data-category="<%= product.category %>">
+  <div class="products">
   <p><%= image_tag(product.image_url, :class => "img-responsive") %></p>
   <%=link_to product_path(product) do %>
     <div class="product-overlay">
       <div class="info-field">
         <p class="name"><%= product.name %></p>
         <p class="price"><%= number_to_currency product.price %></p>
-        <p class="category"><%= product.category %></p>
+          <p class="price"><%= product.category %></p>
       </div>
     </div>
   <% end %>
