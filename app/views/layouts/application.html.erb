@@ -22,7 +22,9 @@
         $(".dropdown-toggle").dropdown();
     });
   </script>
+
   <script type="text/javascript">
+    $(document).ready(function() {
     var $grid = $('.grid').masonry({
       itemSelector: '.grid-item',
       percentPosition: true,
@@ -32,6 +34,7 @@
     $grid.imagesLoaded().progress( function() {
       $grid.masonry('layout');
     });
+      });
   </script>
 
   <script type="text/javascript">
