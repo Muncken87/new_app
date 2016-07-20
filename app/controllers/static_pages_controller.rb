@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
     @products = Product.limit(3)
   end
   def landing_page
-    @products = Product.limit(3)
+    @products = Product.limit(3).select { |product| product.category == 'Clock' }
   end
   def thank_you
   @name = params[:name]

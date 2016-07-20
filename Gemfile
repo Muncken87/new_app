@@ -7,6 +7,7 @@ gem 'ratyrate'
 gem 'rails-controller-testing'
 gem 'stripe'
 gem "brakeman", :require => false
+gem 'angularjs-rails'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
