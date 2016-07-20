@@ -20,25 +20,11 @@ class ProductsController < ApplicationController
     respond_with @products
   end
 
-  def new_product
-    @hamburger = true
-  end
-
-
   # GET /products/1
   # GET /products/1.json
   def show
+    @product = Product.find(params[:id])
     @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
-    puts params
-
-
-puts "*"*8
-
-
-puts params
-
-
-puts "*"*8
   end
 
   # GET /products/new

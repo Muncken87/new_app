@@ -28,8 +28,10 @@
 </div>  -->
   <div class="grid">
     <div class="grid-sizer"></div>
+      <% cache(cache_key_for_products) do %>
     <% @products.each do |product| %>
       <%= render product %>
-    <% end %>
+        <% end %>
+            <% end %>
     </div> <!-- end row -->
 </div>
