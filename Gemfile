@@ -9,6 +9,7 @@ gem 'stripe'
 gem "brakeman", :require => false
 gem 'angularjs-rails'
 gem 'dalli'
+ gem 'redis-rails'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

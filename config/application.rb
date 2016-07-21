@@ -21,6 +21,7 @@ require File.expand_path('../boot', __FILE__)
  # config.i18n.default_locale = :de
  # Do not swallow errors in after_commit/after_rollback callbacks.
      config.active_record.raise_in_transactional_callbacks = true
+     config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
 
    end
  end

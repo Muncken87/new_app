@@ -2,20 +2,20 @@
 require 'rails_helper'
 
 describe UsersController, :type => :controller do
-
-let(:user) { create(:user) }
+  before do
+      @user = FactoryGirl.create(:user)
+  end
 
   describe "GET #show" do
     context "User is logged in" do
       before do
-        sign_in user
+        sign_in @user
       end
   end
       it "loads correct user details" do
-        get :show, id: user.id
-        expect(response).to be_success
+        get :show, id: @user.id
         expect(response).to have_http_status(200)
-        expect(assigns(:user)).to eq user
+        expect(assigns(:user)).to eq @user
       end
 
 

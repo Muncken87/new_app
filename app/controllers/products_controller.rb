@@ -56,6 +56,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+     @product.update_attributes(params[:category])
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
@@ -83,6 +84,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :image_url, :colour, :price, :category)
+      params.require(:product).permit(:name, :description, :image_url, :colour, :price, category:[])
     end
 end
