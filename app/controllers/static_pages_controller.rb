@@ -1,9 +1,9 @@
 class StaticPagesController < ApplicationController
   def index
-    @products = Product.limit(4).select { |product| product.category == 'jumbo' }
+    @products = Product.where(category: "jumbo").limit(4)
   end
   def landing_page
-    @products = Product.limit(4).select { |product| product.category == 'jumbo' }
+    @products = Product.where(category: "jumbo").limit(4)
   end
   def thank_you
   @name = params[:name]
