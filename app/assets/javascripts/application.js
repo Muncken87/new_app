@@ -11,12 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require jquery.turbolinks
+//= require jquery_ujs
 //= require angular
 //= require angular-resource
 //= require turbolinks
-//= require masonry/jquery.masonry
-//= require masonry/jquery.imagesloaded.min
-//= require isotope/jquery.isotope
 //= require_tree .

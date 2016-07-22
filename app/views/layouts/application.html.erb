@@ -10,93 +10,6 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <%= csrf_meta_tags %>
-  <script>
-  $(document).ready(function(){
-    setTimeout(function(){
-      $('.notice,.alert').fadeOut(500);
-    }, 1000);
-  });
-  </script>
-
-
-  <script type="text/javascript">
-    $(document).ready(function() {
-        $(".dropdown-toggle").dropdown();
-    });
-  </script>
-<!--
-  <script type="text/javascript">
-  $(document).ready(function() {
-  var $grid = $('.grid').masonry({
-  itemSelector: '.grid-item',
-  percentPosition: true,
-  columnWidth: '.grid-sizer'
-});
-// layout Isotope after each image loads
-$grid.imagesLoaded().progress( function() {
-  $grid.masonry();
-  });
-});
-  </script>
--->
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    var selectedCategory;
-
-    var $grid = $('.grid').isotope({
-      itemSelector: '.grid-item',
-      masonry: {
-        percentPosition: true,
-        columnWidth: '.grid-sizer'
-      },
-      getSortData: {
-        selectedCategory: function( itemElem ) {
-          return $( itemElem ).hasClass( selectedCategory ) ? 0 : 1;
-        }
-      }
-    });
-
-    var $items = $('.grid').find('.grid-item');
-
-    $('.sort-link-group').on( 'click', '.sort', function() {
-      // set selectedCategory
-      selectedCategory = $( this ).attr('data-category');
-      if ( selectedCategory == 'all' ) {
-        $grid.isotope({
-          sortBy: 'original-order'
-        });
-        // restore all items to full opacity
-        $items.css({
-          opacity: 1
-        });
-        return;
-      }
-      // change opacity for selected/unselected items
-      var selectedClass = '.' + selectedCategory;
-      $items.filter( selectedClass ).css({
-        opacity: 1
-      });
-      $items.not( selectedClass ).css({
-        opacity: 0.25
-      });
-
-      // update sort data now that selectedCategory has changed
-      $grid.isotope('updateSortData');
-      $grid.isotope({ sortBy: 'selectedCategory' });
-    });
-
-      // change is-checked class on buttons
-    $('.button-group').each( function( i, buttonGroup ) {
-      var $buttonGroup = $( buttonGroup );
-      $buttonGroup.on( 'click', 'button', function() {
-        $buttonGroup.find('.is-checked').removeClass('is-checked');
-        $( this ).addClass('is-checked');
-      });
-    });
-  });
-
-</script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -106,6 +19,76 @@ $grid.imagesLoaded().progress( function() {
   <%= yield %>
   <%= render 'static_pages/footer' %>
 
+  <script>
+  $(document).ready(function(){
+    setTimeout(function(){
+      $('.notice,.alert').fadeOut(500);
+    }, 1000);
+  });
+  </script>
+  <script type="text/javascript">
+	  $(document).ready(function(){
+	    var selectedCategory;
 
+	    var $grid = $('.grid').isotope({
+	      itemSelector: '.grid-item',
+	      masonry: {
+	        percentPosition: true,
+	        columnWidth: '.grid-sizer'
+	      },
+	      getSortData: {
+	        selectedCategory: function( itemElem ) {
+	          return $( itemElem ).hasClass( selectedCategory ) ? 0 : 1;
+	        }
+	      }
+	    });
+
+	    var $items = $('.grid').find('.grid-item');
+
+	    $('.sort-link-group').on( 'click', '.sort', function() {
+	      // set selectedCategory
+	      selectedCategory = $( this ).attr('data-category');
+	      if ( selectedCategory == 'all' ) {
+	        $grid.isotope({
+	          sortBy: 'original-order'
+	        });
+	        // restore all items to full opacity
+	        $items.css({
+	          opacity: 1
+	        });
+	        return;
+	      }
+	      // change opacity for selected/unselected items
+	      var selectedClass = '.' + selectedCategory;
+	      $items.filter( selectedClass ).css({
+	        opacity: 1
+	      });
+	      $items.not( selectedClass ).css({
+	        opacity: 0.25
+	      });
+
+	      // update sort data now that selectedCategory has changed
+	      $grid.isotope('updateSortData');
+	      $grid.isotope({ sortBy: 'selectedCategory' });
+	    });
+
+	      // change is-checked class on buttons
+	    $('.button-group').each( function( i, buttonGroup ) {
+	      var $buttonGroup = $( buttonGroup );
+	      $buttonGroup.on( 'click', 'button', function() {
+	        $buttonGroup.find('.is-checked').removeClass('is-checked');
+	        $( this ).addClass('is-checked');
+	      });
+	    });
+	  });
+
+	</script>
+
+
+  <script>
+    $(document).ready(function() {
+        $(".dropdown-toggle").dropdown();
+    });
+  </script>
 </body>
 </html>
