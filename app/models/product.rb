@@ -2,6 +2,8 @@ class Product < ActiveRecord::Base
   validates :name, presence: true
   has_many :orders, dependent: :destroy
   has_many :comments, dependent: :destroy
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
 
 
