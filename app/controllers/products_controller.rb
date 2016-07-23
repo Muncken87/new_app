@@ -2,7 +2,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   respond_to :json, :html
-  # before_filter :authenticate_user!
+  before_filter :authenticate_user!,except: %i(show index)
 
   # GET /products
   # GET /products.json
@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    
+
     @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
   end
 
