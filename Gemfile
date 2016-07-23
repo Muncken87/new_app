@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+source "https://rubygems.org"
+ruby "2.3.1"
 gem 'rails', '4.2.6'
 gem 'rubocop', '~> 0.39.0'
 gem 'ratyrate'
