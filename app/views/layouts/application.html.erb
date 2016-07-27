@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <%= render 'static_pages/head' %>
-<body class="menu">
+<body class="menu" >
   <%= render 'static_pages/nav' %>
   <%= yield %>
   <%= render 'static_pages/footer' %>
@@ -32,7 +32,7 @@
 
 
 	<script type="text/javascript">
-	  $(document).ready(function(){
+document.addEventListener("turbolinks:load", function() {
 	    var selectedCategory;
 
 	    var $grid = $('.grid').isotope({
