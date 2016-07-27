@@ -10,7 +10,6 @@ gem "brakeman", :require => false
 gem 'angularjs-rails'
 gem 'dalli'
 gem 'redis-rails'
-gem 'masonry-rails'
 gem 'jquery-turbolinks', '~> 2.1'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets

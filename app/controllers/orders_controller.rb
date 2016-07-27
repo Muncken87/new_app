@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   protect_from_forgery
    skip_before_action :verify_authenticity_token, if: :json_request?
    respond_to :json, :html
+   before_action :authenticate_user!
 
    def index
      @orders = Order.all.to_json(include: [{product: {only: %i(name image_url)}}, {:user => {:only => :email}}])
@@ -10,9 +11,6 @@ class OrdersController < ApplicationController
 
    def show
      @order = Order.find(params[:id]).to_json(include: [{product: {only: %i(name image_url)}}, {:user => {:only => :email}}])
-
-
-
      respond_with @order
    end
 
