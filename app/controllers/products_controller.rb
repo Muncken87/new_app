@@ -23,10 +23,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-<<<<<<< HEAD
     @products = Product.find(params[:id])
-=======
->>>>>>> 7d5dd89e3a667ef5bf1240791c661673f28a2f8d
     @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
   end
 
