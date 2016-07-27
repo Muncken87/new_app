@@ -2,7 +2,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   respond_to :json, :html
-  # before_filter :authenticate_user!
+  before_filter :authenticate_user!,except: %i(show index)
 
   # GET /products
   # GET /products.json
@@ -23,7 +23,10 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+<<<<<<< HEAD
     @products = Product.find(params[:id])
+=======
+>>>>>>> 7d5dd89e3a667ef5bf1240791c661673f28a2f8d
     @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
   end
 
@@ -34,7 +37,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.friendly.find(params[:id])
   end
 
   # POST /products
@@ -43,7 +46,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     respond_to do |format|
       if @product.save
-        format.html { redirect_to products_path, notice: 'Product was successfully created.'}
+        format.html { redirect_to @product, notice: 'Product was successfully created.'}
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -76,7 +79,7 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

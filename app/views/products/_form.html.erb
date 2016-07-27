@@ -24,7 +24,8 @@
       <%= f.text_field :image_url %>
     </div>
     <div class="field">
-      <%= f.select :category, ['House', 'Flower','Clock','Poster','Books','jumbo'],class: "form-control"%>
+      <%= f.label :category %><br>
+      <%= f.select :category, ['House', 'Flower','Clock','Poster','Books','jumbo'],{},class:  'form-control'%>
     </div>
     <div class="field">
       <%= f.label :colour %><br>

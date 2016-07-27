@@ -9,7 +9,6 @@ Rails.application.configure do
  # and those relying on copy on write to perform better.
  # Rake tasks automatically ignore this option for performance.
  config.eager_load = true
- config.force_ssl = true
 
  # Full error reports are disabled and caching is turned on.
  config.consider_all_requests_local       = false
@@ -75,12 +74,12 @@ Rails.application.configure do
  # Do not dump schema after migrations.
  config.active_record.dump_schema_after_migration = false
 
- config.cache_store = :dalli_store,
-  (ENV["MEMCACHIER_SERVERS"] || "").split(","),
-  {:username => ENV["MEMCACHIER_USERNAME"],
-   :password => ENV["MEMCACHIER_PASSWORD"],
-   :failover => true,
-   :socket_timeout => 1.5,
-   :socket_failure_delay => 0.2
-  }
+ # config.cache_store = :dalli_store,
+ #  (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+ #  {:username => ENV["MEMCACHIER_USERNAME"],
+ #   :password => ENV["MEMCACHIER_PASSWORD"],
+ #   :failover => true,
+ #   :socket_timeout => 1.5,
+ #   :socket_failure_delay => 0.2
+ #  }
  end

@@ -88,7 +88,13 @@ GEM
       i18n (~> 0.5)
     ffi (1.9.14)
     formatador (0.2.5)
+<<<<<<< HEAD
     globalid (0.3.7)
+=======
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
+    globalid (0.3.6)
+>>>>>>> 7d5dd89e3a667ef5bf1240791c661673f28a2f8d
       activesupport (>= 4.1.0)
     guard (2.14.0)
       formatador (>= 0.2.4)
@@ -313,6 +319,7 @@ DEPENDENCIES
   devise
   factory_girl_rails (~> 4.0)
   faker
+  friendly_id (~> 5.1.0)
   guard
   guard-rspec
   guard-spork
@@ -338,6 +345,9 @@ DEPENDENCIES
   web-console (~> 2.0)
   will_paginate (~> 3.1.0)
   will_paginate-bootstrap
+
+RUBY VERSION
+   ruby 2.3.1p112
 
 BUNDLED WITH
    1.12.5

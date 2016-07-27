@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ruby "2.3.1"
 gem 'rails', '4.2.6'
 gem 'rubocop', '~> 0.39.0'
 gem 'ratyrate'
@@ -11,6 +12,7 @@ gem 'angularjs-rails'
 gem 'dalli'
 gem 'redis-rails'
 gem 'jquery-turbolinks', '~> 2.1'
+gem 'friendly_id', '~> 5.1.0'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
