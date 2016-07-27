@@ -1,6 +1,6 @@
 var app = angular.module('shop', ['ngResource']);
 
-$(document).on('turbolinks:load', function() {
+$(document).on('ready page:load', function() {
   angular.bootstrap(document.body, ['shop'])
 });
 
