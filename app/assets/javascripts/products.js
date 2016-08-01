@@ -1,6 +1,4 @@
-$(function(){
-
-
+document.addEventListener("turbolinks:load", function() {
 
 var selectedCategory;
 var $grid = $('.grid').imagesLoaded( function() {

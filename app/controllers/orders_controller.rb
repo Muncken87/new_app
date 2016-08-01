@@ -5,12 +5,20 @@ class OrdersController < ApplicationController
    before_action :authenticate_user!
 
    def index
-     @orders = Order.all.to_json(include: [{product: {only: %i(name image_url)}}, {:user => {:only => :email}}])
-     respond_with @orders
+     @user = current_user
+     if user_signed_in? && @user.admin?
+       @orders = Order.all.includes(:user, :product).to_json(:include => [{product: {only: %i(name image_url)}}, {:user => {:only => :email}}])
+      respond_with @orders
+     elsif user_signed_in?
+       @orders = @user.orders.eager_load(:product).to_json(:include => [{product: {only: %i(name image_url)}}, {:user => {:only => :email}}])
+       respond_with @orders
+     else
+       redirect_to main_app.root_url, alert: "You are not logged in"
+     end
    end
 
    def show
-     @order = Order.find(params[:id]).to_json(include: [{product: {only: %i(name image_url)}}, {:user => {:only => :email}}])
+     @order = Order.friendly.find(params[:id]).to_json(include: [{product: {only: %i(name image_url)}}, {:user => {:only => :email}}])
      respond_with @order
    end
 
@@ -18,6 +26,7 @@ class OrdersController < ApplicationController
    end
 
    def create
+     @order = current_user
      @order = Order.create(order_params)
      respond_with @order
    end
@@ -35,6 +44,6 @@ class OrdersController < ApplicationController
    private
 
    def order_params
-     params.require(:order).permit(:product_id, :user_id, :total ,:product_image_url)
+     params.require(:order).permit(:product_id, :user_id, :total ,:product_image_url,:email)
    end
 end

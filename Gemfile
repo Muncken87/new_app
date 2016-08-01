@@ -13,6 +13,7 @@ gem 'dalli'
 gem 'redis-rails'
 gem 'jquery-turbolinks', '~> 2.1'
 gem 'friendly_id', '~> 5.1.0'
+gem 'stripe-ruby-mock', '~> 2.3.0', :require => 'stripe_mock'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

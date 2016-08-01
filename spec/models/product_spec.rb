@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 describe Product do
   before do
     @product = Product.create!(description: "flower",name: "Red")
@@ -14,6 +15,4 @@ describe Product do
     it "is not valid" do
   	expect(Product.new(description: "Nice flower")).not_to be_valid
   end
-
-
 end

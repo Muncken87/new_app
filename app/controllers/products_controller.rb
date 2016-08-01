@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
     end
     else
       @products = Product.all
+
     end
     respond_with @products
   end
