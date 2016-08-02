@@ -27,4 +27,5 @@ class Product < ActiveRecord::Base
     # before_save do
     #   self.category.gsub!(/[\[\]\"]/, "") if attribute_present?("jumbo")
     # end
+  
 end

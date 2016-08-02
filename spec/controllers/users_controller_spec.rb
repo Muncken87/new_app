@@ -12,10 +12,11 @@ describe UsersController, :type => :controller do
       before do
         sign_in @user1
       end
-  end
+
 
   it "Load User 1 details" do
     get :show, id: @user1.id
+    expect(response).to have_http_status(200)
     expect(assigns(:user)).to eq @user1
   end
 
@@ -23,13 +24,12 @@ describe UsersController, :type => :controller do
   get :show, id: @user2.id
   expect(response).to have_http_status(302)
   expect(assigns(:user)).to eq @user2
-  expect(response).to redirect_to(root_path)
   end
 
-it "should not validate users without an email address" do
-  @user1 = FactoryGirl.build(:user, email: "")
-  expect(@user1).to_not be_valid
-  end
+  it "should not validate users without an email address" do
+    @user1 = FactoryGirl.build(:user, email: "")
+    expect(@user1).to_not be_valid
+    end
 
     # context "No user is logged in" do
     #   it "redirects to login page" do
@@ -37,6 +37,6 @@ it "should not validate users without an email address" do
     #     expect(response).to redirect_to(root_path)
     #   end
     # end
-
+  end
 end
 end
