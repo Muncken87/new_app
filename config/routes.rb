@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   post '/rate' => 'rater#create', :as => 'rate'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  mount ActionCable.server => '/cable'
   resources :users
   resources :products do
     resources :comments
@@ -16,5 +18,4 @@ Rails.application.routes.draw do
   get 'orders' => 'orders#index'
   post 'static_pages/thank_you'
   post 'payments/create'
-
 end
