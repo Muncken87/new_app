@@ -28,9 +28,7 @@
   <div class="grid transitions-enabled">
     <div class="grid-sizer"></div>
     <% @products.each do |product| %>
-      <% cache(cache_key_for_products) do %>
         <%= render product %>
-      <% end %>
     <% end %>
     </div> <!-- end row -->
 </div>
