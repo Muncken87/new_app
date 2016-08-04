@@ -26,7 +26,7 @@
   </thead>
     <tr ng-repeat="order in orders | orderBy:'-id':reverse ">
       <td>
-        <img ng-src='/assets{{order.product.image_url}}' height="150px" width="150px" />
+        <img ng-src='/assets/{{order.product.image_url}}' height="150px" width="150px" />
       </td>
       <td>
         {{order.user.email}}
