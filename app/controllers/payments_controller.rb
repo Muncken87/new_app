@@ -4,7 +4,7 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    @product = Product.find(params[:product_id])
+    @product = Product.friendly.find(params[:product_id])
     @user = current_user
     token = params[:stripeToken]
 
